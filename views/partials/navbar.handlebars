@@ -1,0 +1,74 @@
+<nav class="navbar" id="main-nav">
+    <div class="container-fluid navbar-container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-collapse" aria-expanded="false">
+                <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>
+            </button>
+            <button class="btn btn-default navbar-brand dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-{{current_icon}}" aria-hidden="true"></span>
+            </button>
+            <div class="dropdown-menu container" id="navbar-switch-dropdown">
+                {{> navbar_switch}}
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="main-nav-collapse">
+            <ul class="nav navbar-nav">
+                {{#each tabs}}
+                    <li><a href="{{page}}">{{name}}</a></li>
+                {{/each}}
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown" title="To-Do List" data-toggle="tooltip" data-placement="bottom">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-check user-list-icon" aria-hidden="true"></span></a>
+                    <ul class="dropdown-menu user-list">
+                        {{#each data.todo_items}}
+                            <li class="truncate todo_item"><a>
+                                <input type="checkbox" id="check_{{@index}}" class="todo_check" {{#if completed}}checked{{/if}}/>
+                                <label class="truncate" title="{{item}}" for="check_{{@index}}" >&nbsp;&nbsp;{{item}}</label>
+                                <!-- <i class="remove_item glyphicon glyphicon-remove" aria-hidden="true"></i> -->
+                            </a></li>
+                        {{/each}}
+                        <li id="add_to_do"><a>
+                            <input type="text" placeholder="Add item..." id="add_todo_textbox">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true" id="add_todo_button"></span>
+                        </a></li>
+                    </ul>
+                </li>
+                <li class="dropdown" title="Messages" data-toggle="tooltip" data-placement="bottom">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-envelope user-list-icon" aria-hidden="true"></span></a>
+                    <ul class="dropdown-menu user-list">
+                        {{#each data.messages}}
+                            <li>
+                                <a href="#messages" class="truncate">
+                                    <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                                    &nbsp;&nbsp;<b>{{name}}:</b> {{subject}}
+                                </a>
+                            </li>
+                        {{else}}
+                            <div id="index-notification-empty">No messages</div>
+                        {{/each}}
+                    </ul>
+                </li>
+                <li class="dropdown" title="Notifications" data-toggle="tooltip" data-placement="bottom">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-exclamation-sign user-list-icon" aria-hidden="true"></span></a>
+                    <ul class="dropdown-menu user-list">
+                        {{#each data.notifications}}
+                            <li><a href="/{{module}}" class="truncate {{status}}"><span class="glyphicon {{icon}}" aria-hidden="true"></span>&nbsp;&nbsp;{{message}}</a></li>
+                        {{else}}
+                            <div id="index-notification-empty">No notifications</div>
+                        {{/each}}
+                    </ul>
+                </li>
+                <li class="dropdown" title="Settings" data-toggle="tooltip" data-placement="bottom">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog user-list-icon" aria-hidden="true"></span></a>
+                    <ul class="dropdown-menu user-list">
+                        <li><a href="#packages">Add Package</a></li>
+                        <li><a href="#account">My Account</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#logout">Log Out</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

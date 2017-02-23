@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+	{{> head}}
+	<script src="js/index_scripts.js"></script>
+</head>
+<body>
+	{{> navbar}}
+	<div id="index" class="container-fluid">
+		<div class="container" id="index-banner">
+			<div class="row">
+				<h2 class="col-md-12 text-center">Welcome back, User</h2>
+				<br/>
+			</div>
+			<div class="row" id="favorite-index-modules">
+				<div class="col-md-1"></div>
+				<a class="col-md-2 text-center index-module" href="/schedule">
+					<span class="glyphicon glyphicon-star pull-left favorite" aria-hidden="true"></span>
+					{{#if counts.schedule}}<div class="notification-bubble">{{counts.schedule}}</div>{{/if}}
+					<span class="module-icon glyphicon glyphicon-calendar" aria-hidden="true"></span>
+	    			<p>Scheduler</p>
+				</a>
+				<a class="col-md-2 text-center index-module" href="/payroll">
+					<span class="glyphicon glyphicon-star pull-left favorite" aria-hidden="true"></span>
+					{{#if counts.payroll}}<div class="notification-bubble">{{counts.payroll}}</div>{{/if}}
+					<span class="module-icon glyphicon glyphicon-credit-card" aria-hidden="true"></span>
+	    			<p>Payroll</p>
+				</a>
+				<a class="col-md-2 text-center index-module" href="/inventory">
+					<span class="glyphicon glyphicon-star pull-left favorite" aria-hidden="true"></span>
+					{{#if counts.inventory}}<div class="notification-bubble">{{counts.inventory}}</div>{{/if}}
+					<span class="module-icon glyphicon glyphicon-inbox" aria-hidden="true"></span>
+	    			<p>Inventory</p>
+				</a>
+				<a class="col-md-2 text-center index-module" href="/accounting">
+					<span class="glyphicon glyphicon-star pull-left favorite" aria-hidden="true"></span>
+					{{#if counts.accounting}}<div class="notification-bubble">{{counts.accounting}}</div>{{/if}}
+					<span class="module-icon glyphicon glyphicon-usd" aria-hidden="true"></span>
+	    			<p>Accounting</p>
+				</a>
+				<div class="col-md-1"></div>
+			</div>
+		</div>
+		<div class="container-fluid" id="module-navigation">
+			<div class="row">
+				<div class="col-md-3" id="index-module-category-list">
+					<div class="input-group" id="index-module-search">
+						<input type="text" class="form-control" placeholder="Search..." aria-describedby="search">
+							<span class="input-group-addon" id="search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></span>
+					</div>
+					<ul class="nav nav-stacked">
+						<li><a class="index-module-category active default">All</a></li>
+						<li><a class="index-module-category" id="employees">Employees</a></li>
+						<li><a class="index-module-category" id="finances">Finances</a></li>
+						<li><a class="index-module-category" id="resources">Resources</a></li>
+					</ul>
+				</div>
+				<div class="col-md-9 container" id="index-modules">
+					<div class="row">
+						<a class="col-sm-3 text-center index-module finances" href="/accounting">
+							<span class="glyphicon glyphicon-star pull-left favorite" aria-hidden="true"></span>
+							{{#if counts.accounting}}<div class="notification-bubble">{{counts.accounting}}</div>{{/if}}
+							<span class="module-icon glyphicon glyphicon-usd" aria-hidden="true"></span>
+			    			<p>Accounting</p>
+						</a>
+						<a class="col-sm-3 text-center index-module employees" href="/assets">
+							<span class="glyphicon glyphicon-star-empty pull-left favorite" aria-hidden="true"></span>
+							{{#if counts.assets}}<div class="notification-bubble">{{counts.assets}}</div>{{/if}}
+							<span class="module-icon glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+			    			<p>Assets</p>
+						</a>
+						<a class="col-sm-3 text-center index-module employees" href="/attendance">
+							<span class="glyphicon glyphicon-star-empty pull-left favorite" aria-hidden="true"></span>
+							{{#if counts.attendance}}<div class="notification-bubble">{{counts.attendance}}</div>{{/if}}
+							<span class="module-icon glyphicon glyphicon-time" aria-hidden="true"></span>
+			    			<p>Attendance</p>
+						</a>
+						<a class="col-sm-3 text-center index-module finances" href="/calculator">
+							<span class="glyphicon glyphicon-star-empty pull-left favorite" aria-hidden="true"></span>
+							{{#if counts.calculator}}<div class="notification-bubble">{{counts.calculator}}</div>{{/if}}
+							<span class="module-icon glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+			    			<p>Calculator</p>
+						</a>
+						<a class="col-sm-3 text-center index-module finances" href="/cashflow">
+							<span class="glyphicon glyphicon-star-empty pull-left favorite" aria-hidden="true"></span>
+							{{#if counts.cashflow}}<div class="notification-bubble">{{counts.cashflow}}</div>{{/if}}
+							<span class="module-icon glyphicon glyphicon-signal" aria-hidden="true"></span>
+			    			<p>Cashflow</p>
+						</a>
+						<a class="col-sm-3 text-center index-module resources" href="/inventory">
+							<span class="glyphicon glyphicon-star pull-left favorite" aria-hidden="true"></span>
+							{{#if counts.inventory}}<div class="notification-bubble">{{counts.inventory}}</div>{{/if}}
+							<span class="module-icon glyphicon glyphicon-inbox" aria-hidden="true"></span>
+			    			<p>Inventory</p>
+						</a>
+						<a class="col-sm-3 text-center index-module finances employees" href="/payroll">
+							<span class="glyphicon glyphicon-star pull-left favorite" aria-hidden="true"></span>
+							{{#if counts.payroll}}<div class="notification-bubble">{{counts.payroll}}</div>{{/if}}
+							<span class="module-icon glyphicon glyphicon-credit-card" aria-hidden="true"></span>
+			    			<p>Payroll</p>
+						</a>
+						<a class="col-sm-3 text-center index-module employees resources" href="/schedule">
+							<span class="glyphicon glyphicon-star pull-left favorite" aria-hidden="true"></span>
+							{{#if counts.schedule}}<div class="notification-bubble">{{counts.schedule}}</div>{{/if}}
+							<span class="module-icon glyphicon glyphicon-calendar" aria-hidden="true"></span>
+			    			<p>Scheduler</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
+
+<div class="row">

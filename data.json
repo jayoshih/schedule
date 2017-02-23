@@ -1,0 +1,89 @@
+{
+	"notifications": [
+		{
+			"module": "schedule",
+			"icon": "glyphicon-calendar",
+			"status": "warning",
+			"message": "To Do: Empty slot for January 1st - 8:00am to 10:00am"
+		},
+		{
+			"module": "schedule",
+			"icon": "glyphicon-calendar",
+			"status": "error",
+			"message": "Urgent: Scheduling conflict for January 5th - John Smith @ 9:00am"
+		},
+		{
+			"module": "schedule",
+			"icon": "glyphicon-calendar",
+			"status": "warning",
+			"message": "To Do: Empty slot for January 10th - 3:00pm to 6:00pm"
+		},
+		{
+			"module": "inventory",
+			"icon": "glyphicon-inbox",
+			"status": "error",
+			"message": "Urgent: Inventory for item #1 has reached 0."
+		}
+		,
+		{
+			"module": "inventory",
+			"icon": "glyphicon-inbox",
+			"status": "error",
+			"message": "Urgent: Inventory for item #2 has reached 0."
+		},
+		{
+			"module": "inventory",
+			"icon": "glyphicon-inbox",
+			"status": "warning",
+			"message": "Confirmation needed: item #3 has arrived."
+		},
+		{
+			"module": "inventory",
+			"icon": "glyphicon-inbox",
+			"status": "warning",
+			"message": "Confirmation needed: item #7 has arrived."
+		},
+		{
+			"module": "accounting",
+			"icon": "glyphicon-usd",
+			"status": "warning",
+			"message": "Warning: Deadline for payroll coming up in 8 days."
+		},
+		{
+			"module": "accounting",
+			"icon": "glyphicon-usd",
+			"status": "error",
+			"message": "Urgent: Deadline for filing is overdue by 10 days"
+		}
+	],
+	"messages":[
+		{
+			"name": "John Smith",
+			"subject": "Time Off Request",
+			"message": "MESSAGE"
+		},
+		{
+			"name": "Jane Doe",
+			"subject": "W-2 Forms Requested",
+			"message": "MESSAGE"
+		},
+		{
+			"name": "Jane Doe",
+			"subject": "Switch Shifts",
+			"message": "MESSAGE"
+		}
+	],
+	"todo_items":[
+		{
+			"item": "Fill out W-2 forms",
+			"completed": false
+		},
+		{
+			"item": "Onboard new employee",
+			"completed": true
+		}
+	],
+	"schedules": [
+
+	]
+}

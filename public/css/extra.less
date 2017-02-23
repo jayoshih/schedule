@@ -1,0 +1,35 @@
+
+#index-notification-header{
+            background-color: @teal-400;
+            font-weight:bold;
+            font-size:13pt;
+            color:white;
+            margin-top: 20px;
+            padding:5px;
+        }
+#index-notification-box{
+    min-height: 150px;
+    max-height: 250px;
+    overflow-x:hidden;
+    overflow-y: auto;
+    height: 20vh;
+    background-color: white;
+    margin-bottom:30px;
+    cursor: pointer;
+    #index-notifications-list{
+        max-height:250px;
+    }
+    .index-notification {
+        min-height: 40px;
+        padding:5px;
+        font-size: 11pt;
+        a{color:@gray-600;}
+    }
+    .error .message{
+        color: @red;
+        font-weight:bold;
+    }
+    .index-notification:hover{
+        background-color: @gray-100;
+    }
+}
